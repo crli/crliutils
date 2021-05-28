@@ -1,0 +1,28 @@
+<!--
+ * @Author: crli
+ * @Date: 2021-05-28 10:40:14
+ * @LastEditors: crli
+ * @LastEditTime: 2021-05-28 11:10:25
+ * @Description: file content
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <script src="./dist/crliUtils.js"></script> -->
+</head>
+<body>
+  <button id="btn">清除</button>
+</body>
+<script  type="module">
+  import crliUtils from './dist/crliUtils.esm.js'
+  console.log(crliUtils)
+  crliUtils.setCookie('name',1)
+  document.getElementById('btn').onclick = function() {
+    alert(crliUtils.getCookie('name'))
+    crliUtils.removeCookie('name')
+  }
+</script>
+</html>
