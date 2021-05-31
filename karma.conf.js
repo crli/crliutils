@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-05-28 15:00:40
  * @LastEditors: crli
- * @LastEditTime: 2021-05-28 16:52:04
+ * @LastEditTime: 2021-05-31 14:52:47
  * @Description: file content
  */
 // Karma configuration
@@ -91,7 +91,7 @@ module.exports = function(config) {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['ChromeHeadless'],
-
+    // browsers: ['Chrome'],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
