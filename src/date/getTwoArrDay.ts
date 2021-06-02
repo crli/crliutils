@@ -2,13 +2,13 @@
  * @Author: crli
  * @Date: 2021-06-01 16:47:55
  * @LastEditors: crli
- * @LastEditTime: 2021-06-01 16:58:46
+ * @LastEditTime: 2021-06-02 09:58:17
  * @Description: file content
  */
 /**
  * 
- * @desc   获得近包含当天和前N天的日期数组 比如今天是2021-06-01
- * @param  {any} obj
+ * @desc   获得包含当天和前N天的日期数组 比如今天是2021-06-01
+ * @param  {day} number = 7
  * @return {Array<string>} ["2021-05-26", "2021-06-01"]
  */
 const getTwoArrDay = (day: number = 7) : Array<string> => {
