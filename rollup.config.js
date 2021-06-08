@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-05-27 14:33:24
  * @LastEditors: crli
- * @LastEditTime: 2021-05-31 15:16:24
+ * @LastEditTime: 2021-06-08 11:12:16
  * @Description: file content
  */
 import resolve from 'rollup-plugin-node-resolve'
@@ -16,12 +16,12 @@ let config = {
   output:[
     { 
       name: pkg.name,
-      file: pkg.browser, // 最终打包出来的文件路径和文件名，这里是在package.json的browser字段中配置的
+      file: 'dist/crliutils.js',
       format: 'umd', // umd是兼容amd/cjs/iife的通用打包格式，适合浏览器
     },
     { 
       name: pkg.name,
-      file: pkg.moduleName, 
+      file: 'dist/crliutils.esm.js', 
       format: 'es' 
     }
   ],
@@ -35,12 +35,12 @@ if (env === 'production') {
   config.output = [
     { 
       name: pkg.name,
-      file: 'dist/crliUtils.min.js', // 最终打包出来的文件路径和文件名，这里是在package.json的browser字段中配置的
-      format: 'umd', // umd是兼容amd/cjs/iife的通用打包格式，适合浏览器
+      file: 'dist/'+ pkg.main,
+      format: 'umd',
     },
     { 
       name: pkg.name,
-      file: 'dist/crliUtils.esm.min.js', 
+      file: 'dist/'+ pkg.module, 
       format: 'es' 
     }
   ],

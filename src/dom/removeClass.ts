@@ -12,8 +12,8 @@
  * @return { Boolean } true or false 
  */
 import hasClass from './hasClass'
-const removeClass = (obj: Element, cls: string):void=> {
-  if (hasClass(obj,cls)) {
+const removeClass = (obj: Element, cls: string): void => {
+  if (hasClass(obj, cls)) {
     let reg = new RegExp('(\\s|^)' + cls + '(\\s|$)')
     obj.className = obj.className.replace(reg, ' ')
   }

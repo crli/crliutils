@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-01 16:47:55
  * @LastEditors: crli
- * @LastEditTime: 2021-06-02 09:58:17
+ * @LastEditTime: 2021-06-08 15:42:01
  * @Description: file content
  */
 /**
@@ -11,7 +11,7 @@
  * @param  {day} number = 7
  * @return {Array<string>} ["2021-05-26", "2021-06-01"]
  */
-const getTwoArrDay = (day: number = 7) : Array<string> => {
+const getTwoArrDay = (day: number = 7): Array<string> => {
   const temp = []
   const dayArr = [-day + 1, 0]
   for (let i = 0; i < dayArr.length; i++) {

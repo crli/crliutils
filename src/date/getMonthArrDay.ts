@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-01 16:47:55
  * @LastEditors: crli
- * @LastEditTime: 2021-06-02 09:59:42
+ * @LastEditTime: 2021-06-08 15:41:51
  * @Description: file content
  */
 /**
@@ -13,14 +13,14 @@
  * @return {Array<string>} ["2021-05-01", "2021-06-01"]
  */
 import isLeapYear from './isLeapYeay'
-function getyearNum(num: number, n: number) : number{
+function getyearNum(num: number, n: number): number {
   if (num / 12 < n) {
     return n
   } else {
     return getyearNum(num, ++n)
   }
 }
-const getMonthArrDay = (count: number = 1, flag:string = 'month') : Array<string> => {
+const getMonthArrDay = (count: number = 1, flag: string = 'month'): Array<string> => {
   const temp = []
   const time = new Date()
   const year = time.getFullYear()

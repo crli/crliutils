@@ -2,14 +2,14 @@
  * @Author: crli
  * @Date: 2021-06-01 09:46:36
  * @LastEditors: crli
- * @LastEditTime: 2021-06-01 14:05:01
+ * @LastEditTime: 2021-06-08 15:40:05
  * @Description: file content
  */
 
 /**
  * 浏览器判断是否全屏
  */
-const fullscreenToggel = function(): void {
+const fullscreenToggel = function (): void {
   if (document.fullscreenElement) {
     exitFullScreen()
   } else {
@@ -20,14 +20,14 @@ const fullscreenToggel = function(): void {
 /**
 * 浏览器全屏
 */
-const reqFullScreen = function(): Promise<void> {
-  if (document.documentElement.requestFullscreen){
-    return document.documentElement.requestFullscreen();
-  } else if(document.documentElement.webkitRequestFullScreen){
+const reqFullScreen = function (): Promise<void> {
+  if (document.documentElement.requestFullscreen) {
+    return document.documentElement.requestFullscreen()
+  } else if (document.documentElement.webkitRequestFullScreen) {
     return document.documentElement.webkitRequestFullScreen()
-  } else if(document.documentElement.mozRequestFullScreen){
+  } else if (document.documentElement.mozRequestFullScreen) {
     return document.documentElement.mozRequestFullScreen()
-  } else{
+  } else {
     return document.documentElement.msRequestFullscreen()
   }
 }

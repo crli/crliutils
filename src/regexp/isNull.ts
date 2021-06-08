@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-01 13:45:02
  * @LastEditors: crli
- * @LastEditTime: 2021-06-01 13:47:00
+ * @LastEditTime: 2021-06-08 15:45:18
  * @Description: file content
  */
 /**
@@ -12,20 +12,20 @@
  * @return {Boolean} 
  */
 
-const isNull = function(val: any) : boolean{
+const isNull = function (val: any): boolean {
   if (typeof val == 'boolean') {
-      return false
+    return false
   }
   if (typeof val == 'number') {
-      return false
+    return false
   }
   if (val instanceof Array) {
-      if (val.length == 0) return true
+    if (val.length == 0) return true
   } else if (val instanceof Object) {
-      if (JSON.stringify(val) === '{}') return true
+    if (JSON.stringify(val) === '{}') return true
   } else {
-      if (val == 'null' || val == null || val == 'undefined' || val == undefined || val == '') return true
-      return false
+    if (val == 'null' || val == null || val == 'undefined' || val == undefined || val == '') return true
+    return false
   }
   return false
 }

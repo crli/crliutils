@@ -10,7 +10,7 @@
  * @param  {Object} obj 
  * @return {String}
  */
-const getQueryStringify = function(obj: { [key: string]: any }) : object | string {
+const getQueryStringify = function (obj: { [key: string]: any }): object | string {
   if (!obj) return ''
   let pairs = []
   for (let key in obj) {

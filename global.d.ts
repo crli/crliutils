@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-01 10:11:49
  * @LastEditors: crli
- * @LastEditTime: 2021-06-01 15:32:36
+ * @LastEditTime: 2021-06-08 15:19:25
  * @Description: file content
  */
 interface HTMLElement {
@@ -23,4 +23,5 @@ interface Element {
 }
 interface Window {
   getComputedStyle(elt: Element, pseudoElt?: string | null | undefined): CSSStyleDeclaration[string]
+  mozRequestAnimationFrame(callback: FrameRequestCallback): number
 }

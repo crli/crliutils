@@ -2,25 +2,25 @@
  * @Author: crli
  * @Date: 2021-06-01 14:03:16
  * @LastEditors: crli
- * @LastEditTime: 2021-06-01 14:42:07
+ * @LastEditTime: 2021-06-08 15:45:28
  * @Description: file content
  */
 /**
  * 存储localStorage
  */
-const setStore = (name: string, content: string) : void => {
-	if (!name) return
-	if (typeof content !== 'string') {
-		content = JSON.stringify(content)
-	}
-	window.localStorage.setItem(name, content)
+const setStore = (name: string, content: string): void => {
+  if (!name) return
+  if (typeof content !== 'string') {
+    content = JSON.stringify(content)
+  }
+  window.localStorage.setItem(name, content)
 }
 
 /**
  * 获取localStorage
  */
-const getStore = (name: string) : any => {
-	if (!name) return
+const getStore = (name: string): any => {
+  if (!name) return
   let obj = window.localStorage.getItem(name)
   if (obj === null || obj === 'undefined') {
     return obj
@@ -36,16 +36,16 @@ const getStore = (name: string) : any => {
 /**
  * 删除localStorage
  */
-const removeStore = (name: string) : void => {
-	if (!name) return
-	window.localStorage.removeItem(name)
+const removeStore = (name: string): void => {
+  if (!name) return
+  window.localStorage.removeItem(name)
 }
 
 /**
  * 清空localStorage
  */
-const clearStore = () : void => {
-	window.localStorage.clear()
+const clearStore = (): void => {
+  window.localStorage.clear()
 }
 
 export default {

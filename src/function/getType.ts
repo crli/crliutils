@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-05-31 15:31:47
  * @LastEditors: crli
- * @LastEditTime: 2021-05-31 15:40:54
+ * @LastEditTime: 2021-06-08 15:43:40
  * @Description: file content
  */
 /**
@@ -11,7 +11,7 @@
  * @param  {any} obj
  * @return {String} 
  */
-const getType = function(obj : any) : string {
+const getType = function (obj: any): string {
   var toString = Object.prototype.toString
   var map: { [key: string]: string } = {
     '[object Boolean]': 'boolean',

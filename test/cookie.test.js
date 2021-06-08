@@ -8,37 +8,37 @@
 describe('Cookie API:', function () {
     describe('#getCookie()', function () {
         before(function () {
-            crliUtils.setCookie('test', 'value')
+            crliutils.setCookie('test', 'value')
         })
-        it(`crliUtils.getCookie('test') should return string`, function () {
-            assert(crliUtils.getCookie('test') === 'value')
+        it(`crliutils.getCookie('test') should return string`, function () {
+            assert(crliutils.getCookie('test') === 'value')
         })
-        it(`crliUtils.getCookie('empty') should return ''`, function () {
-            assert(crliUtils.getCookie('empty') === '')
+        it(`crliutils.getCookie('empty') should return ''`, function () {
+            assert(crliutils.getCookie('empty') === '')
         })
         after(function () {
-            crliUtils.removeCookie('test')
+            crliutils.removeCookie('test')
         })
     })
 
     describe('#removeCookie()', function () {
         before(function () {
-            crliUtils.setCookie('test', 'removeTestValue')
+            crliutils.setCookie('test', 'removeTestValue')
         })
-        it(`crliUtils.removeCookie('test') should return void`, function () {
-            crliUtils.removeCookie('test')
-            assert.notEqual(crliUtils.getCookie('test') === 'removeTestValue', true)
-            assert(crliUtils.getCookie('test') === '')
+        it(`crliutils.removeCookie('test') should return void`, function () {
+            crliutils.removeCookie('test')
+            assert.notEqual(crliutils.getCookie('test') === 'removeTestValue', true)
+            assert(crliutils.getCookie('test') === '')
         })
     })
 
     describe('#setCookie()', function () {
-        it(`crliUtils.setCookie('test') should return void`, function () {
-            crliUtils.setCookie('test', 'setCookie')
-            assert(crliUtils.getCookie('test') === 'setCookie')
+        it(`crliutils.setCookie('test') should return void`, function () {
+            crliutils.setCookie('test', 'setCookie')
+            assert(crliutils.getCookie('test') === 'setCookie')
         })
         after(function () {
-            crliUtils.removeCookie('test')
+            crliutils.removeCookie('test')
         })
     })
 })

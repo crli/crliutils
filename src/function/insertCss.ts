@@ -11,7 +11,7 @@
  * @param  {string} string
  * @return {void} 
  */
-const loadStyle = function(url:string):void {
+const loadStyle = function (url: string): void {
   const link = document.createElement('link')
   link.type = 'text/css'
   link.rel = 'stylesheet'

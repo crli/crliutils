@@ -22,7 +22,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [ // 需要加载到浏览器的文件列表
-      'dist/crliUtils.js',
+      'dist/crliutils.js',
       'test/**/*.test.js'
     ],
 

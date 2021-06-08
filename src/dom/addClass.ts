@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-01 14:47:19
  * @LastEditors: crli
- * @LastEditTime: 2021-06-01 14:55:41
+ * @LastEditTime: 2021-06-08 15:42:36
  * @Description: file content
  */
 /**
@@ -12,8 +12,8 @@
  * @return { Boolean } true or false 
  */
 import hasClass from './hasClass'
-const addClass = (obj: Element, cls: string):void=> {
-  if (!hasClass(obj,cls)) {
+const addClass = (obj: Element, cls: string): void => {
+  if (!hasClass(obj, cls)) {
     obj.className += ' ' + cls
   }
 }

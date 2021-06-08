@@ -11,7 +11,7 @@
  * @param  {String|Number} str 
  * @return {Boolean} 
  */
-const isPhoneNum = function(str: string|number) :boolean {
+const isPhoneNum = function (str: string | number): boolean {
   return /^(\+?0?86\-?)?1[3456789]\d{9}$/.test(String(str))
 }
 

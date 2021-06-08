@@ -15,22 +15,22 @@
  * @param {Boolean} secure 该Cookie是否仅被使用安全协议传输(https)
  */
 
-const setCookie = function (name:string, value:string, expires:Date | null, domain: string | null, path:string | null, secure:boolean | null) : void {
-    let cookieText = "";
-    cookieText += encodeURIComponent(name) + "=" + encodeURIComponent(value)
-    if (expires instanceof Date) {
-        cookieText += "; expires=" + expires.toUTCString()
-    }
-    if (path) {
-        cookieText += "; path=" + path
-    }
-    if (domain) {
-        cookieText += "; domain=" + domain
-    }
-    if (secure) {
-        cookieText += "; secure"
-    }			
-    document.cookie = cookieText
+const setCookie = function (name: string, value: string, expires: Date | null, domain: string | null, path: string | null, secure: boolean | null): void {
+  let cookieText = "";
+  cookieText += encodeURIComponent(name) + "=" + encodeURIComponent(value)
+  if (expires instanceof Date) {
+    cookieText += "; expires=" + expires.toUTCString()
+  }
+  if (path) {
+    cookieText += "; path=" + path
+  }
+  if (domain) {
+    cookieText += "; domain=" + domain
+  }
+  if (secure) {
+    cookieText += "; secure"
+  }
+  document.cookie = cookieText
 }
 
 export default setCookie

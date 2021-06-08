@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-05-27 14:39:05
  * @LastEditors: crli
- * @LastEditTime: 2021-06-02 10:54:15
+ * @LastEditTime: 2021-06-08 15:47:10
  * @Description: file content
  */
 import cookie from './cookie/index'
@@ -14,6 +14,8 @@ import regexp from './regexp/index'
 import storage from './storage/index'
 import date from './date/index'
 import time from './time/index'
+import array from './array/index'
+import dom from './dom/index'
 export {
   cookie,
   url,
@@ -23,7 +25,9 @@ export {
   regexp,
   storage,
   date,
-  time
+  time,
+  array,
+  dom
 }
 export default {
   ...cookie,
@@ -34,5 +38,7 @@ export default {
   ...regexp,
   ...storage,
   ...date,
-  ...time
+  ...time,
+  ...array,
+  ...dom
 }

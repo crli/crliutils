@@ -1,14 +1,14 @@
 {
-  "name": "crliUtils",
-  "version": "1.0.0",
+  "name": "crliutils",
+  "version": "0.0.2",
   "description": "前端工具库",
-  "main": "index.js",
-  "moduleName": "dist/crliUtils.esm.js",
-  "browser": "dist/crliUtils.js",
+  "main": "crliutils.min.js",
+  "module": "crliutils.esm.min.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production rollup -c",
+    "build": "cross-env NODE_ENV=production rollup -c && copy package.json dist && copy README.md dist",
     "dev": "rollup -c -w",
-    "test": "npm run dev && karma start karma.conf.js"
+    "test": "npm run dev && karma start karma.conf.js",
+    "publish": "cd dist && npm publish && cd ../"
   },
   "keywords": [
     "utils"

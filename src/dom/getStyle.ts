@@ -13,7 +13,7 @@
  * @param { String } NumberMode
  * @return { number } 
  */
-const getStyle = (element:Element, attr: string, NumberMode: string = 'int') : number=> {
+const getStyle = (element: Element, attr: string, NumberMode: string = 'int'): number => {
   let target
   if (attr === 'scrollTop') {
     target = element == document.documentElement ? (document.documentElement.scrollTop || document.body.scrollTop) : element.scrollTop
