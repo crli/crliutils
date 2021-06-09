@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-05-31 15:44:03
  * @LastEditors: crli
- * @LastEditTime: 2021-06-08 15:44:55
+ * @LastEditTime: 2021-06-09 16:05:55
  * @Description: file content
  */
 /**
@@ -12,7 +12,7 @@
  * @return {obj} 
  */
 function isObject(obj: object): boolean {
-  return typeof obj === 'object' || typeof obj === 'function' && obj !== null
+  return (typeof obj === 'object' || typeof obj === 'function') && obj !== null
 }
 const deepCopy = function (obj: any): object {
   if (isObject(obj)) {

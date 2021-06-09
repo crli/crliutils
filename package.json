@@ -7,8 +7,12 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production rollup -c && copy package.json dist && copy README.md dist",
     "dev": "rollup -c -w",
-    "test": "npm run dev && karma start karma.conf.js",
+    "test": "rollup -c && karma start karma.conf.js",
     "publish": "cd dist && npm publish && cd ../"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/crli/crliutils"
   },
   "keywords": [
     "utils"

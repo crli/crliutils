@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-01 16:47:55
  * @LastEditors: crli
- * @LastEditTime: 2021-06-08 15:41:51
+ * @LastEditTime: 2021-06-09 11:19:01
  * @Description: file content
  */
 /**
@@ -10,6 +10,7 @@
  * @desc   获得包含当天和前N月或者N年的的日期数组 比如今天是2021-06-01
  * @param  {count} number = 1
  * @param  {flag} string = 'month'||其他string
+ * @param  {Date|string} date '2021-06-01'|new Date()
  * @return {Array<string>} ["2021-05-01", "2021-06-01"]
  */
 import isLeapYear from './isLeapYeay'
@@ -20,9 +21,9 @@ function getyearNum(num: number, n: number): number {
     return getyearNum(num, ++n)
   }
 }
-const getMonthArrDay = (count: number = 1, flag: string = 'month'): Array<string> => {
+const getMonthArrDay = (count: number = 1, flag: string = 'month', date: string | Date): Array<string> => {
   const temp = []
-  const time = new Date()
+  const time = new Date(date? date : new Date())
   const year = time.getFullYear()
   const month = `0${time.getMonth() + 1}`.slice(-2)
   const strDate = `0${time.getDate()}`.slice(-2)

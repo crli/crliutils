@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-01 14:47:19
  * @LastEditors: crli
- * @LastEditTime: 2021-06-08 15:42:44
+ * @LastEditTime: 2021-06-09 13:51:52
  * @Description: file content
  */
 /**
@@ -12,6 +12,9 @@
  * @return { Boolean } true or false 
  */
 const hasClass = (obj: Element, cls: string): boolean => {
-  return (new RegExp('(\\s|^)' + cls + '(\\s|$)')).test(obj.className)
+  if (cls && obj) {
+    return (new RegExp('(\\s|^)' + cls + '(\\s|$)')).test(obj.className)
+  }
+  return false
 }
 export default hasClass
