@@ -2,22 +2,22 @@
  * @Author: crli
  * @Date: 2021-06-01 13:45:02
  * @LastEditors: crli
- * @LastEditTime: 2021-06-08 15:45:18
+ * @LastEditTime: 2021-06-10 10:09:39
  * @Description: file content
  */
 /**
  * 
- * @desc   判断是否为空
+ * @desc   判断是否通过
  * @param  {any} val 
  * @return {Boolean} 
  */
 
-const isNull = function (val: any): boolean {
-  if (typeof val == 'boolean') {
-    return false
+const isNotPass = function (val: any): boolean {
+  if (val == false) {
+    return true
   }
-  if (typeof val == 'number') {
-    return false
+  if (val == 0) {
+    return true
   }
   if (val instanceof Array) {
     if (val.length == 0) return true
@@ -29,4 +29,4 @@ const isNull = function (val: any): boolean {
   }
   return false
 }
-export default isNull
+export default isNotPass

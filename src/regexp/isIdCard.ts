@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-01 13:40:34
  * @LastEditors: crli
- * @LastEditTime: 2021-06-01 15:49:08
+ * @LastEditTime: 2021-06-10 09:29:56
  * @Description: file content
  */
 /**
@@ -19,29 +19,29 @@ const isIdCard = function (code: string): object {
   var row = {
     'pass': true,
     'msg': '验证成功'
-  };
+  }
   if (!code || !/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|[xX])$/.test(code)) {
     row = {
       'pass': false,
       'msg': '身份证号格式错误'
-    };
+    }
   } else if (!city[code.substr(0, 2)]) {
     row = {
       'pass': false,
       'msg': '身份证号地址编码错误'
-    };
+    }
   } else {
     //18位身份证需要验证最后一位校验位
     if (code.length == 18) {
-      let codes = code.split('');
+      let codes = code.split('')
       //∑(ai×Wi)(mod 11)
       //加权因子
-      var factor = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];
+      var factor = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2]
       //校验位
-      var parity = [1, 0, 'X', 9, 8, 7, 6, 5, 4, 3, 2];
-      var sum = 0;
-      var ai = 0;
-      var wi = 0;
+      var parity = [1, 0, 'X', 9, 8, 7, 6, 5, 4, 3, 2]
+      var sum = 0
+      var ai = 0
+      var wi = 0
       for (var i = 0; i < 17; i++) {
         ai = Number(codes[i]);
         wi = factor[i];
@@ -51,11 +51,11 @@ const isIdCard = function (code: string): object {
         row = {
           'pass': false,
           'msg': '身份信息校验错误'
-        };
+        }
       }
     }
   }
-  return row;
+  return row
 }
 
 // const isIdCard = function(str: string) :boolean {
