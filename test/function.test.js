@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-10 10:15:54
  * @LastEditors: crli
- * @LastEditTime: 2021-06-10 17:07:05
+ * @LastEditTime: 2021-06-11 10:28:05
  * @Description: file content
  */
 describe('Function API:', function () {
@@ -34,25 +34,6 @@ describe('Function API:', function () {
       })
     })
   })
-  // '[object Boolean]': 'boolean',
-  //   '[object Number]': 'number',
-  //   '[object String]': 'string',
-  //   '[object Function]': 'function',
-  //   '[object Array]': 'array',
-  //   '[object Date]': 'date',
-  //   '[object RegExp]': 'regExp',
-  //   '[object Undefined]': 'undefined',
-  //   '[object Null]': 'null',
-  //   '[object Object]': 'object',
-  //   '[object Symbol]': 'symbol',
-  //   '[object Set]': 'set',
-  //   '[object WeakSet]': 'weakSet',
-  //   '[object Map]': 'map',
-  //   '[object WeakMap]': 'weakmap'
-  // }
-  // if (obj instanceof Element) {
-  //   return 'element'
-  // }
   describe('#getType()', function () {
     it(`crliutils.getType(false) should return 'boolean'`, function () {
       assert.equal(crliutils.getType(false), 'boolean')
@@ -90,6 +71,20 @@ describe('Function API:', function () {
     it(`crliutils.getType(div) should return 'element'`, function () {
       let div = document.createElement('div')
       assert.equal(crliutils.getType(div), 'element')
+    })
+  })
+  describe('#insertCss()', function () {
+    it(`crliutils.insertCss('https://necolas.github.io/normalize.css/latest/normalize.css') should return void`, function () {
+      crliutils.insertCss('https://necolas.github.io/normalize.css/latest/normalize.css')
+      let nodeEle = document.querySelectorAll('link')[0]
+      assert.equal(nodeEle.href, 'https://necolas.github.io/normalize.css/latest/normalize.css')
+    })
+  })
+  describe('#downFile()', function () {
+    //karma.conf.js 文件browsers修改为 ['Chrome']测试
+    it(`crliutils.downFile([html],'一个表格') should return excel文件`, function () {
+      let html = `html` 
+      crliutils.downFile([html],'一个表格')
     })
   })
 })

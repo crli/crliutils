@@ -2,13 +2,13 @@
  * @Author: crli
  * @Date: 2021-06-01 11:27:57
  * @LastEditors: crli
- * @LastEditTime: 2021-06-08 15:42:54
+ * @LastEditTime: 2021-06-11 10:11:06
  * @Description: file content
  */
 /**
  * 
  * @desc  下载excel文件 请求时候注意responseType: 'blob',
- * @param  {Array<Blob>} [Blob]
+ * @param  {Array<Blob>} [Blob] 文件流
  * @return {void} 
  */
 const downFile = function (data: Array<Blob>, name: string): void {

@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-02 10:34:59
  * @LastEditors: crli
- * @LastEditTime: 2021-06-02 10:52:06
+ * @LastEditTime: 2021-06-11 13:35:47
  * @Description: file content
  */
 /**
@@ -11,8 +11,8 @@
  * @param  {Date} endTime  
  * @return {String}
  */
-const formatTimeCountdown = (endTime: string): string => {
-  let startDate = new Date()
+const formatTimeCountdown = (endTime: string, nowDate?: string| Date): string => {
+  let startDate = new Date(nowDate?nowDate:new Date())
   let endDate = new Date(endTime)
   let t = endDate.getTime() - startDate.getTime()
   let d = 0,
