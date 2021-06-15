@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-10 09:23:11
  * @LastEditors: crli
- * @LastEditTime: 2021-06-10 16:54:40
+ * @LastEditTime: 2021-06-15 16:04:28
  * @Description: file content
  */
 describe('Regexp API:', function () {
@@ -10,7 +10,7 @@ describe('Regexp API:', function () {
     it(`crliutils.isEmail() should return false`, function () {
       assert.equal(crliutils.isEmail() , false)
     })
-    it(`crliutils.isEmail('695922129) should return true`, function () {
+    it(`crliutils.isEmail('695922129@qq.com') should return true`, function () {
       assert.equal(crliutils.isEmail('695922129@qq.com') , true)
     })
   })
@@ -62,11 +62,20 @@ describe('Regexp API:', function () {
     it(`crliutils.isNotPass([]) should return true`, function () {
       assert.equal(crliutils.isNotPass([]) , true)
     })
+    it(`crliutils.isNotPass([1]) should return false`, function () {
+      assert.equal(crliutils.isNotPass([1]) , false)
+    })
     it(`crliutils.isNotPass(0) should return true`, function () {
       assert.equal(crliutils.isNotPass(0) , true)
     })
     it(`crliutils.isNotPass(false) should return true`, function () {
       assert.equal(crliutils.isNotPass(false) , true)
+    })
+    it(`crliutils.isNotPass(1) should return false`, function () {
+      assert.equal(crliutils.isNotPass(1) , false)
+    })
+    it(`crliutils.isNotPass({a:1}) should return false`, function () {
+      assert.equal(crliutils.isNotPass({a:1}) , false)
     })
   })
 
@@ -74,7 +83,7 @@ describe('Regexp API:', function () {
     it(`crliutils.isPhoneNum(13333333333) should return true`, function () {
       assert.equal(crliutils.isPhoneNum(13333333333) , true)
     })
-    it(`crliutils.isPhoneNum('111111111111) should return false`, function () {
+    it(`crliutils.isPhoneNum('111111111111') should return false`, function () {
       assert.equal(crliutils.isPhoneNum('111111111111') , false)
     })
   })

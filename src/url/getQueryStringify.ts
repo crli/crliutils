@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-05-31 13:39:25
  * @LastEditors: crli
- * @LastEditTime: 2021-05-31 13:48:27
+ * @LastEditTime: 2021-06-15 16:51:15
  * @Description: file content
  */
 /**
@@ -17,11 +17,11 @@ const getQueryStringify = function (obj: { [key: string]: any }): object | strin
     let value = obj[key]
     if (value instanceof Array) {
       for (let i = 0; i < value.length; ++i) {
-        pairs.push(encodeURIComponent(key + '[' + i + ']') + '=' + encodeURIComponent(value[i]));
+        pairs.push(key + '[' + i + ']' + '=' + value[i]);
       }
       continue
     }
-    pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]))
+    pairs.push(key + '=' + obj[key])
   }
   return pairs.join('&')
 }

@@ -12,10 +12,13 @@
   },
   "repository" : {
     "type" : "git",
-    "url" : "https://github.com/crli/crliutils"
+    "url" : "git+https://github.com/crli/crliutils"
   },
+  "homepage": "https://github.com/crli/crliutils",
   "keywords": [
-    "utils"
+    "utils",
+    "crliutils",
+    "tools"
   ],
   "author": "crli",
   "license": "MIT",

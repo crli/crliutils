@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-01 09:46:36
  * @LastEditors: crli
- * @LastEditTime: 2021-06-08 15:40:05
+ * @LastEditTime: 2021-06-15 13:48:17
  * @Description: file content
  */
 
@@ -10,7 +10,7 @@
  * 浏览器判断是否全屏
  */
 const fullscreenToggel = function (): void {
-  if (document.fullscreenElement) {
+  if (fullscreenEnable()) {
     exitFullScreen()
   } else {
     reqFullScreen()
@@ -45,4 +45,11 @@ function exitFullScreen(): Promise<void> {
     return document.msExitFullscreen()
   }
 };
+/**
+ * 浏览器判断是否全屏
+ */
+const fullscreenEnable = () :boolean => {
+  var isFullscreen = document.isFullScreen || document.mozIsFullScreen || document.webkitIsFullScreen
+  return !!isFullscreen
+}
 export default fullscreenToggel

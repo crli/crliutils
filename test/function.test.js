@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-10 10:15:54
  * @LastEditors: crli
- * @LastEditTime: 2021-06-11 10:28:05
+ * @LastEditTime: 2021-06-15 17:01:20
  * @Description: file content
  */
 describe('Function API:', function () {
@@ -24,6 +24,9 @@ describe('Function API:', function () {
     })
   })
   describe('#getSex()', function () {
+    it(`crliutils.getSex() should return null`, function () {
+      assert.deepEqual(crliutils.getSex(), null)
+    })
     it(`crliutils.getSex('110101190103071969') should return {
       sex: '女',
       birthday: '1901-03-07'

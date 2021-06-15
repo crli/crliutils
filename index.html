@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-05-28 10:40:14
  * @LastEditors: crli
- * @LastEditTime: 2021-06-08 16:00:41
+ * @LastEditTime: 2021-06-15 15:16:25
  * @Description: file content
 -->
 <!DOCTYPE html>
@@ -18,13 +18,17 @@
   <button id="btn1">quan</button>
 </body>
 <script  type="module">
-  import crliutils, {cookie} from './dist/crliutils.esm.min.js'
+  import crliutils, {cookie, bom} from './dist/crliutils.esm.min.js'
   console.log(crliutils)
   console.log(cookie)
   crliutils.setCookie('name',1)
   document.getElementById('btn').onclick = function() {
     alert(crliutils.getCookie('name'))
     crliutils.removeCookie('name')
+    bom.fullscreenToggel()
   }
+  bom.listenfullscreen(function(){
+    console.log(44444444444)
+  })
 </script>
 </html>

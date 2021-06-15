@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-10 10:15:10
  * @LastEditors: crli
- * @LastEditTime: 2021-06-11 13:40:21
+ * @LastEditTime: 2021-06-15 16:25:26
  * @Description: file content
  */
 describe('Time API:', function () {
@@ -46,6 +46,9 @@ describe('Time API:', function () {
   describe('#formatTimeCountdown()', function () {
     it(`crliutils.formatTimeCountdown('2021-06-20 11:12:30', '2021-06-11 11:11:11') should return '9天 0小时 1分钟 19秒'`, function () {
       assert.equal(crliutils.formatTimeCountdown('2021-06-20 11:12:30', '2021-06-11 11:11:11'), '9天 0小时 1分钟 19秒')
+    })
+    it(`crliutils.formatTimeCountdown('2020-06-20 11:12:30', '2021-06-11 11:11:11') should return '0天 0小时 0分钟 0秒'`, function () {
+      assert.equal(crliutils.formatTimeCountdown('2020-06-20 11:12:30', '2021-06-11 11:11:11'), '0天 0小时 0分钟 0秒')
     })
   })
 })
