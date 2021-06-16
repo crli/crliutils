@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-05-31 11:03:48
  * @LastEditors: crli
- * @LastEditTime: 2021-06-08 15:45:56
+ * @LastEditTime: 2021-06-16 15:10:20
  * @Description: file content
  */
 /**
@@ -25,7 +25,7 @@ const getQueryParse = function (url: string = window.location.href): object {
   const query: { [key: string]: any } = {}
   for (let i = 0; i < searchArr.length; i++) {
     let pair = searchArr[i].split('=')
-    query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '')
+    query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1])
   }
   return query
 }

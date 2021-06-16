@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-10 10:15:54
  * @LastEditors: crli
- * @LastEditTime: 2021-06-15 17:01:20
+ * @LastEditTime: 2021-06-16 15:56:33
  * @Description: file content
  */
 describe('Function API:', function () {
@@ -29,11 +29,57 @@ describe('Function API:', function () {
     })
     it(`crliutils.getSex('110101190103071969') should return {
       sex: '女',
-      birthday: '1901-03-07'
+      birthday: '1901-03-07',
+      age:120
     }`, function () {
       assert.deepEqual(crliutils.getSex('110101190103071969'), {
         sex: '女',
-        birthday: '1901-03-07'
+        birthday: '1901-03-07',
+        age:120
+      })
+    })
+    it(`crliutils.getSex('110101190111308372') should return {
+      sex: '男',
+      birthday: '1901-11-30',
+      age:119
+    }`, function () {
+      assert.deepEqual(crliutils.getSex('110101190111308372'), {
+        sex: '男',
+        birthday: '1901-11-30',
+        age:119
+      })
+    })
+    it(`crliutils.getSex('110101190106153214') should return {
+      sex: '男',
+      birthday: '1901-06-15',
+      age:120
+    }`, function () {
+      assert.deepEqual(crliutils.getSex('110101190106153214'), {
+        sex: '男',
+        birthday: '1901-06-15',
+        age:120
+      })
+    })
+    it(`crliutils.getSex('130503670401001') should return {
+      sex: '女',
+      birthday: '1967-04-01',
+      age:54
+    }`, function () {
+      assert.deepEqual(crliutils.getSex('130503670401001'), {
+        sex: '女',
+        birthday: '1967-04-01',
+        age:54
+      })
+    })
+    it(`crliutils.getSex('130503671111001') should return {
+      sex: '女',
+      birthday: '1967-11-11',
+      age:53
+    }`, function () {
+      assert.deepEqual(crliutils.getSex('116503671111001'), {
+        sex: '女',
+        birthday: '1967-11-11',
+        age:53
       })
     })
   })

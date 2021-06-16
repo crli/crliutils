@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-10 10:15:10
  * @LastEditors: crli
- * @LastEditTime: 2021-06-15 16:25:26
+ * @LastEditTime: 2021-06-16 15:34:20
  * @Description: file content
  */
 describe('Time API:', function () {
@@ -24,6 +24,9 @@ describe('Time API:', function () {
       })
       it(`crliutils.formatPassTime(new Date('2021-06-09 11:04:50'), new Date('2021-06-09 11:05:10')) should return Array`, function () {
         assert.equal(crliutils.formatPassTime(new Date('2021-06-09 11:04:50'), new Date('2021-06-09 11:05:10')),'刚刚')
+      })
+      it(`crliutils.formatPassTime(new Date('2021-06-09')) should return 21年前`, function () {
+        assert.equal(crliutils.formatPassTime(new Date('2000-06-09')),'21年前')
       })
   })
   describe('#formatTime()', function () {
@@ -49,6 +52,9 @@ describe('Time API:', function () {
     })
     it(`crliutils.formatTimeCountdown('2020-06-20 11:12:30', '2021-06-11 11:11:11') should return '0天 0小时 0分钟 0秒'`, function () {
       assert.equal(crliutils.formatTimeCountdown('2020-06-20 11:12:30', '2021-06-11 11:11:11'), '0天 0小时 0分钟 0秒')
+    })
+    it(`crliutils.formatTimeCountdown('2020-06-20 11:12:30') should return '0天 0小时 0分钟 0秒'`, function () {
+      assert.equal(crliutils.formatTimeCountdown('2020-06-20 11:12:30'), '0天 0小时 0分钟 0秒')
     })
   })
 })

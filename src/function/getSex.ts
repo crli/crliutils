@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-01 15:48:06
  * @LastEditors: crli
- * @LastEditTime: 2021-06-01 16:26:42
+ * @LastEditTime: 2021-06-16 09:43:52
  * @Description: file content
  */
 /**
@@ -41,7 +41,8 @@ const getSex = (idCardNo: string): object | null => {
 
   return {
     sex,
-    birthday: birth
+    birthday: birth,
+    age
   }
 }
 export default getSex

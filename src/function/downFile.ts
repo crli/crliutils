@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-01 11:27:57
  * @LastEditors: crli
- * @LastEditTime: 2021-06-11 10:11:06
+ * @LastEditTime: 2021-06-16 15:42:55
  * @Description: file content
  */
 /**
@@ -14,10 +14,8 @@
 const downFile = function (data: Array<Blob>, name: string): void {
   let date = new Date()
   let year: string = date.getFullYear() + ''
-  let month: string = date.getMonth() + 1 + ''
-  let day: string = date.getDate() + ''
-  if (Number(month) < 10) month = "0" + month
-  if (Number(day) < 10) day = "0" + day
+  let day: string = `0${date.getDate()}`.slice(-2)
+  let month: string  = `0${date.getMonth() + 1}`.slice(-2)
   let blob = new Blob(data, { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8' })
   let downloadElement = document.createElement('a')
   let url = window.URL.createObjectURL(blob)

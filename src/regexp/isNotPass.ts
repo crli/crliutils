@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-01 13:45:02
  * @LastEditors: crli
- * @LastEditTime: 2021-06-10 10:09:39
+ * @LastEditTime: 2021-06-16 15:23:03
  * @Description: file content
  */
 /**
@@ -16,7 +16,7 @@ const isNotPass = function (val: any): boolean {
   if (val == false) {
     return true
   }
-  if (val == 0) {
+  if (val === 0) {
     return true
   }
   if (val instanceof Array) {

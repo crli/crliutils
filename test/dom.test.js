@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-09 13:36:33
  * @LastEditors: crli
- * @LastEditTime: 2021-06-09 14:39:18
+ * @LastEditTime: 2021-06-16 16:24:58
  * @Description: file content
  */
 describe('Dom API:', function () {
@@ -14,7 +14,11 @@ describe('Dom API:', function () {
       document.body.appendChild(div)
       element = document.getElementById('ediv')
     })
-    it(`crliutils.addClass() should return void`, function () {
+    it(`crliutils.addClass(element, 'add') should return void`, function () {
+      crliutils.addClass(element, 'add')
+      assert.equal(crliutils.hasClass(element,'add'), true)
+    })
+    it(`crliutils.addClass(element, 'add') 2 should return void`, function () {
       crliutils.addClass(element, 'add')
       assert.equal(crliutils.hasClass(element,'add'), true)
     })
@@ -37,6 +41,9 @@ describe('Dom API:', function () {
     it(`crliutils.hasClass(element, 'test1') should return false`, function () {
       assert.equal(crliutils.hasClass(element,'test1'), false)
     })
+    it(`crliutils.hasClass() should return false`, function () {
+      assert.equal(crliutils.hasClass(element), false)
+    })
     after(function () {
       document.body.removeChild(element)
     })
@@ -56,9 +63,12 @@ describe('Dom API:', function () {
       crliutils.removeClass(element,'test')
       assert.equal(crliutils.hasClass(element,'test'), false)
     })
-    it(`crliutils.removeClass(element, 'test1') should return void`, function () {
+    it(`crliutils.removeClass(element, 'test111') should return void`, function () {
       assert.equal(crliutils.hasClass(element,'test2'), true)
     })
+    // it(`crliutils.removeClass(element, 'test3') should return void`, function () {
+    //   assert.equal(crliutils.hasClass(element,'test3'), false)
+    // })
     after(function () {
       document.body.removeChild(element)
     })
@@ -69,6 +79,7 @@ describe('Dom API:', function () {
       let div = document.createElement('div')
       div.id = 'ediv'
       div.style.width = '100px'
+      div.style.height = '10000px'
       div.style.color = 'red'
       div.style.opacity = '.11'
       document.body.appendChild(div)
@@ -82,6 +93,10 @@ describe('Dom API:', function () {
     })
     it(`crliutils.getStyle(element, 'opacity') should return .11`, function () {
       assert.equal(crliutils.getStyle(element,'opacity','float'), 0.11)
+    })
+    it(`crliutils.getStyle(element, 'scrollTop') should return 100`, function () {
+      crliutils.setScrollTop(10)
+      assert.equal(crliutils.getStyle(document.documentElement || document.body,'scrollTop'), 10)
     })
     after(function () {
       document.body.removeChild(element)

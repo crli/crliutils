@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-09 15:43:24
  * @LastEditors: crli
- * @LastEditTime: 2021-06-09 17:01:02
+ * @LastEditTime: 2021-06-16 15:15:44
  * @Description: file content
  */
 describe('Object API:', function () {
@@ -57,6 +57,15 @@ describe('Object API:', function () {
       let numObj = new Number(111)
       let cloneNumObj = crliutils.deepCopy(numObj)
       assert.deepEqual(numObj, cloneNumObj)
+    })
+    it(`crliutils.deepCopy(new Number(111)) should return  new Number(111)`, function () {
+      let obj = {
+        a: {
+          b: 1
+        }
+      }
+      let cloneobj = crliutils.deepCopy(obj)
+      assert.equal(obj.a.b, cloneobj.a.b)
     })
   })
 })

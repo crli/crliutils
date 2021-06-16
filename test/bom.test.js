@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-15 09:42:28
  * @LastEditors: crli
- * @LastEditTime: 2021-06-15 15:37:35
+ * @LastEditTime: 2021-06-16 16:27:15
  * @Description: file content
  */
 const fullscreenEnable = () => {
@@ -28,7 +28,7 @@ describe('Bom API:', function () {
     //     assert.equal(fullscreenEnable(), true)
     //     done()
     //   },300)
-      
+
     // })
     // after(function () {
     //   document.body.removeChild(element)
@@ -84,9 +84,24 @@ describe('Bom API:', function () {
     before(function () {
       $body.style.height = '10000px'
     })
-    it(`crliutils.scrollTo() should to 10`, function (done) {
+    it(`ccrliutils.scrollTo(20, 0) should to 10`, function (done) {
+      crliutils.scrollTo(20, 0)
+      setTimeout(() => {
+        assert.equal(crliutils.getScrollTop(), 20)
+        done()
+      }, 10)
+    })
+    it(`crliutils.scrollTo(10, 100) should to 10`, function (done) {
       crliutils.scrollTo(10, 100)
       setTimeout(() => {
+        assert.equal(crliutils.getScrollTop(), 10)
+        done()
+      }, 300)
+    })
+    it(`crliutils.scrollTo(10, 100) should to 10`, function (done) {
+      crliutils.scrollTo(10, 100)
+      setTimeout(() => {
+        crliutils.scrollTo(10, 100)
         assert.equal(crliutils.getScrollTop(), 10)
         done()
       }, 300)
@@ -99,31 +114,31 @@ describe('Bom API:', function () {
   describe('#windowResize()', function () {
     let innerHeight = window.innerHeight
     it(`crliutils.windowResize(downCb) should return true`, function (done) {
-        crliutils.windowResize(function () {
-            // 键盘缩回回调
-            assert(window.innerHeight == innerHeight)
-            done()
-        }, function () {})
-        // 触发resize事件，模拟软键盘缩回
-        window.dispatchEvent(new Event('resize'))
+      crliutils.windowResize(function () {
+        // 键盘缩回回调
+        assert(window.innerHeight == innerHeight)
+        done()
+      }, function () { })
+      // 触发resize事件，模拟软键盘缩回
+      window.dispatchEvent(new Event('resize'))
     })
-});
+  });
 
-describe('#windowResize()', function () {
+  describe('#windowResize()', function () {
     let innerHeight = window.innerHeight
     it(`crliutils.windowResize(upCb) should return true`, function (done) {
-        crliutils.windowResize(function () {}, function () {
-            // 键盘弹起回调
-            assert(window.innerHeight === innerHeight - 200)
-            done()
-        })
-        // 设置innerHeight，模拟软键盘弹起
-        window.innerHeight = innerHeight - 200
-        // 触发resize事件
-        window.dispatchEvent(new Event('resize'))
+      crliutils.windowResize(function () { }, function () {
+        // 键盘弹起回调
+        assert(window.innerHeight === innerHeight - 200)
+        done()
+      })
+      // 设置innerHeight，模拟软键盘弹起
+      window.innerHeight = innerHeight - 200
+      // 触发resize事件
+      window.dispatchEvent(new Event('resize'))
     })
-    after(function(){
-        window.innerHeight = innerHeight
+    after(function () {
+      window.innerHeight = innerHeight
     })
-});
+  });
 })

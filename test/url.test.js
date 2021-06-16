@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-05-31 14:01:04
  * @LastEditors: crli
- * @LastEditTime: 2021-06-15 16:51:27
+ * @LastEditTime: 2021-06-16 15:12:18
  * @Description: file content
  */
 describe('Url API:', function () {
@@ -47,6 +47,9 @@ describe('Url API:', function () {
       it(`crliutils.getQueryParse('') should return {}`, function () {
         let url = ''
         assert.deepEqual(crliutils.getQueryParse(url), {})
+      })
+      it(`crliutils.getQueryParse() should return {}`, function () {
+        assert.deepEqual(crliutils.getQueryParse(), {})
       })
   })
 

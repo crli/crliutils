@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-05-27 15:28:24
  * @LastEditors: crli
- * @LastEditTime: 2021-05-28 14:07:46
+ * @LastEditTime: 2021-06-16 09:11:03
  * @Description: file content
  */
 /**
@@ -15,7 +15,7 @@
  * @param {Boolean} secure 该Cookie是否仅被使用安全协议传输(https)
  */
 
-const setCookie = function (name: string, value: string, expires: Date | null, domain: string | null, path: string | null, secure: boolean | null): void {
+const setCookie = function (name: string, value: string, expires: Date | null, path: string | null, domain: string | null, secure: boolean | null): void {
   let cookieText = "";
   cookieText += encodeURIComponent(name) + "=" + encodeURIComponent(value)
   if (expires instanceof Date) {

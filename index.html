@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-05-28 10:40:14
  * @LastEditors: crli
- * @LastEditTime: 2021-06-15 15:16:25
+ * @LastEditTime: 2021-06-16 14:02:58
  * @Description: file content
 -->
 <!DOCTYPE html>
@@ -18,17 +18,31 @@
   <button id="btn1">quan</button>
 </body>
 <script  type="module">
-  import crliutils, {cookie, bom} from './dist/crliutils.esm.min.js'
-  console.log(crliutils)
-  console.log(cookie)
-  crliutils.setCookie('name',1)
+  import crliutils, {cookie, bom, functions} from './dist/crliutils.esm.min.js'
+  window.crliutils = crliutils
+  // console.log(crliutils)
+  // console.log(cookie)
+  // console.log(functions.getSex('110101190103078431'))
+  // crliutils.setCookie('name',1)
   document.getElementById('btn').onclick = function() {
-    alert(crliutils.getCookie('name'))
-    crliutils.removeCookie('name')
-    bom.fullscreenToggel()
+    // alert(crliutils.getCookie('name'))
+    // crliutils.removeCookie('name')
+    // bom.fullscreenToggel()
+    bom.setScrollTop(1001)
   }
-  bom.listenfullscreen(function(){
-    console.log(44444444444)
-  })
+  // bom.listenfullscreen(function(){
+  //   console.log(44444444444)
+  // })
+  window.onload = function () {
+    let div = document.createElement('div');
+      div.id = 'ediv'
+      div.style.width = '100px'
+      div.style.height = '10000px'
+      div.style.color = 'red'
+      div.style.opacity = '.11'
+      document.body.appendChild(div)
+    let element = document.getElementById('ediv')
+    bom.setScrollTop(1001)
+  }
 </script>
 </html>
