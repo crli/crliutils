@@ -2,12 +2,12 @@
  * @Author: crli
  * @Date: 2021-05-28 17:21:50
  * @LastEditors: crli
- * @LastEditTime: 2021-06-08 15:41:27
+ * @LastEditTime: 2021-06-17 14:23:53
  * @Description: file content
  */
 import setCookie from './setCookie'
 /**
- * @desc 获取cookie的操作
+ * @desc 移除cookie的操作
  * @param {String} name cookie的名
  * @param {String} domain 可以访问该Cookie的域名
  * @param {String} path Cookie的使用路径

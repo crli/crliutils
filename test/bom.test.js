@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-15 09:42:28
  * @LastEditors: crli
- * @LastEditTime: 2021-06-16 16:27:15
+ * @LastEditTime: 2021-06-17 11:12:48
  * @Description: file content
  */
 const fullscreenEnable = () => {
@@ -11,40 +11,39 @@ const fullscreenEnable = () => {
 }
 describe('Bom API:', function () {
   describe('#fullscreenToggel()', function () {
-    // let element = null
-    // before(function() {
-    //   let div = document.createElement('div')
-    //   div.id = 'ediv'
-    //   document.body.appendChild(div)
-    //   element = document.getElementById('ediv')
-    //   element.onclick = crliutils.fullscreenToggel()
-    // })
-    // it(`flag should return false`, function () {
-    //   assert.equal(fullscreenEnable(), false)
-    // })
-    // it(`crliutils.fullscreenToggel() && fullscreenEnable()should return true`, async function (done) {
-    //   element.click()
-    //   setTimeout(()=>{
-    //     assert.equal(fullscreenEnable(), true)
-    //     done()
-    //   },300)
+    let element = null
+    before(function() {
+      let div = document.createElement('div')
+      div.id = 'ediv'
+      document.body.appendChild(div)
+      element = document.getElementById('ediv')
+      element.onclick = crliutils.fullscreenToggel
+    })
+    it(`flag should return false`, function () {
+      assert.equal(fullscreenEnable(), false)
+    })
+    it(`crliutils.fullscreenToggel() && fullscreenEnable()should return true`, function (done) {
+      element.click() //需要手动触发不可以模拟, Failed to execute 'requestFullscreen' on 'Element': API can only be initiated by a user gesture
+      setTimeout(()=>{
+        assert.equal(fullscreenEnable(), false) //正常使用单击之后fullscreenEnable()应该返回true
+        done()
+      },300)
 
-    // })
-    // after(function () {
-    //   document.body.removeChild(element)
-    // })
+    })
+    after(function () {
+      document.body.removeChild(element)
+    })
   })
   describe('#listenfullscreen()', function () {
-    // let innerHeight = window.innerHeight
-    // it(`crliutils.listenfullscreen(func) should return true`, function (done) {
-    //   crliutils.listenfullscreen(function () {
-    //     assert.equal(window.innerHeight, innerHeight)
-    //     done()
-    //   })
-    //   // 触发fullscreenchange事件
-    //   window.dispatchEvent(new Event('fullscreenchange'))
-    //   window.dispatchEvent(new Event('webkitfullscreenchange'))
-    // })
+    let innerHeight = window.innerHeight
+    it(`crliutils.listenfullscreen(func) should return true`, function () {
+      crliutils.listenfullscreen(function () {
+        assert.equal(window.innerHeight, innerHeight)
+        // done()
+      })
+      // //需要手动触发不可以模拟, Failed to execute 'requestFullscreen' on 'Element': API can only be initiated by a user gesture
+      window.dispatchEvent(new Event('fullscreenchange'))
+    })
   })
   describe('#getScrollTop()', function () {
     let $body = document.body

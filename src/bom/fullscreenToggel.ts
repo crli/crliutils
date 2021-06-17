@@ -2,12 +2,12 @@
  * @Author: crli
  * @Date: 2021-06-01 09:46:36
  * @LastEditors: crli
- * @LastEditTime: 2021-06-15 13:48:17
+ * @LastEditTime: 2021-06-17 13:27:43
  * @Description: file content
  */
 
 /**
- * 浏览器判断是否全屏
+ * 浏览器全屏与退出全屏切换
  */
 const fullscreenToggel = function (): void {
   if (fullscreenEnable()) {
