@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-05-28 15:00:40
  * @LastEditors: crli
- * @LastEditTime: 2021-06-21 15:24:28
+ * @LastEditTime: 2021-06-21 15:59:32
  * @Description: file content
  */
 // Karma configuration
@@ -22,7 +22,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [ // 需要加载到浏览器的文件列表
-      'dist/crliutils.min.js',
+      'dist/crliutils.js',
       'test/**/*.test.js'
     ],
 

@@ -1304,7 +1304,7 @@ var getStyle = function (element, attr, NumberMode) {
  * @Author: crli
  * @Date: 2021-06-01 14:47:19
  * @LastEditors: crli
- * @LastEditTime: 2021-06-01 16:27:09
+ * @LastEditTime: 2021-06-21 15:54:42
  * @Description: file content
  */
 var removeClass = function (obj, cls) {

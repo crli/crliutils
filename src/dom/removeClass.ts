@@ -2,11 +2,11 @@
  * @Author: crli
  * @Date: 2021-06-01 14:47:19
  * @LastEditors: crli
- * @LastEditTime: 2021-06-01 16:27:09
+ * @LastEditTime: 2021-06-21 15:54:42
  * @Description: file content
  */
 /**
- * @desc 为元素添加class
+ * @desc 移除class
  * @param { Element } element 
  * @param { String } cls
  * @return { Boolean } true or false 

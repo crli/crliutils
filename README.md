@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-08 10:08:14
  * @LastEditors: crli
- * @LastEditTime: 2021-06-17 15:47:04
+ * @LastEditTime: 2021-06-21 15:54:31
  * @Description: file content
 -->
  
@@ -66,10 +66,10 @@ import crliutils, {cookie} from 'crliutils'
 #### &emsp;&emsp;[isLeapYeay][isLeapYeay]&emsp;&emsp;是否为闰年
 
 ### Dom  
-#### &emsp;&emsp;[addClass][addClass]&emsp;&emsp;获得前N天的日期数组（包含N个值的数组）
-#### &emsp;&emsp;[getStyle][getStyle]&emsp;&emsp;获得包含当天和前N月或者N年的的日期数组（包含2个值的数组）
-#### &emsp;&emsp;[hasClass][hasClass]&emsp;&emsp;获取指定日期月份的总天数
-#### &emsp;&emsp;[removeClass][removeClass]&emsp;&emsp;获得包含当天和前N天的日期数组（包含2个值的数组）
+#### &emsp;&emsp;[addClass][addClass]&emsp;&emsp;为元素添加class
+#### &emsp;&emsp;[getStyle][getStyle]&emsp;&emsp;获取属性值
+#### &emsp;&emsp;[hasClass][hasClass]&emsp;&emsp;判断元素是否包含类名
+#### &emsp;&emsp;[removeClass][removeClass]&emsp;&emsp;移除class
 
 ### Function
 #### &emsp;&emsp;[getType][getType]&emsp;&emsp;获得对象类型
