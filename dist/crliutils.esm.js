@@ -118,7 +118,7 @@ var cookie = {
  * @Author: crli
  * @Date: 2021-05-31 11:03:48
  * @LastEditors: crli
- * @LastEditTime: 2021-06-16 15:10:20
+ * @LastEditTime: 2021-06-21 14:07:46
  * @Description: file content
  */
 /**
@@ -128,8 +128,8 @@ var cookie = {
  * @return {Object}
  */
 var getQueryParse = function (url) {
-    if (url === void 0) { url = window.location.href; }
-    url = !url ? window.location.href : url;
+    if (url === void 0) { url = window && window.location.href; }
+    url = !url ? window && window.location.href : url;
     if (url.indexOf('?') === -1) {
         return {};
     }
@@ -1328,19 +1328,7 @@ var dom = {
     removeClass: removeClass
 };
 
-// export {
-//   cookie,
-//   url,
-//   object,
-//   bom,
-//   functions,
-//   regexp,
-//   storage,
-//   date,
-//   time,
-//   array,
-//   dom
-// }
 var index = __assign(__assign(__assign(__assign(__assign(__assign(__assign(__assign(__assign(__assign(__assign({}, cookie), url), object), bom), functions), regexp), storage), date), time), array), dom);
 
 export default index;
+export { array, bom, cookie, date, dom, functions, object, regexp, storage, time, url };

@@ -1,6 +1,6 @@
 {
   "name": "crliutils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "前端工具库",
   "main": "crliutils.min.js",
   "module": "crliutils.esm.min.js",

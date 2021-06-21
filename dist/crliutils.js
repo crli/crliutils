@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-    typeof define === 'function' && define.amd ? define(factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.crliutils = factory());
-}(this, (function () { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+    typeof define === 'function' && define.amd ? define(['exports'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.crliutils = {}));
+}(this, (function (exports) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation.
@@ -124,7 +124,7 @@
      * @Author: crli
      * @Date: 2021-05-31 11:03:48
      * @LastEditors: crli
-     * @LastEditTime: 2021-06-16 15:10:20
+     * @LastEditTime: 2021-06-21 14:07:46
      * @Description: file content
      */
     /**
@@ -134,8 +134,8 @@
      * @return {Object}
      */
     var getQueryParse = function (url) {
-        if (url === void 0) { url = window.location.href; }
-        url = !url ? window.location.href : url;
+        if (url === void 0) { url = window && window.location.href; }
+        url = !url ? window && window.location.href : url;
         if (url.indexOf('?') === -1) {
             return {};
         }
@@ -1334,21 +1334,21 @@
         removeClass: removeClass
     };
 
-    // export {
-    //   cookie,
-    //   url,
-    //   object,
-    //   bom,
-    //   functions,
-    //   regexp,
-    //   storage,
-    //   date,
-    //   time,
-    //   array,
-    //   dom
-    // }
     var index = __assign(__assign(__assign(__assign(__assign(__assign(__assign(__assign(__assign(__assign(__assign({}, cookie), url), object), bom), functions), regexp), storage), date), time), array), dom);
 
-    return index;
+    exports.array = array;
+    exports.bom = bom;
+    exports.cookie = cookie;
+    exports.date = date;
+    exports.default = index;
+    exports.dom = dom;
+    exports.functions = functions;
+    exports.object = object;
+    exports.regexp = regexp;
+    exports.storage = storage;
+    exports.time = time;
+    exports.url = url;
+
+    Object.defineProperty(exports, '__esModule', { value: true });
 
 })));

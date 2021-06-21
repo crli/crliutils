@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-05-31 11:03:48
  * @LastEditors: crli
- * @LastEditTime: 2021-06-16 15:10:20
+ * @LastEditTime: 2021-06-21 14:07:46
  * @Description: file content
  */
 /**
@@ -11,8 +11,8 @@
  * @param  {String} url
  * @return {Object} 
  */
-const getQueryParse = function (url: string = window.location.href): object {
-  url = !url ? window.location.href : url;
+const getQueryParse = function (url: string = window && window.location.href): object {
+  url = !url ? window && window.location.href : url;
   if (url.indexOf('?') === -1) {
     return {}
   }
