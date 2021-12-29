@@ -105,7 +105,7 @@ var removeCookie = function (name, domain, path, secure) {
  * @Author: crli
  * @Date: 2021-05-27 15:28:24
  * @LastEditors: crli
- * @LastEditTime: 2021-05-28 14:07:38
+ * @LastEditTime: 2021-12-29 09:23:26
  * @Description: file content
  */
 var cookie = {
@@ -201,7 +201,7 @@ var getUrlQuery = function (name, search) {
  * @Author: crli
  * @Date: 2021-05-31 13:58:41
  * @LastEditors: crli
- * @LastEditTime: 2021-05-31 13:59:04
+ * @LastEditTime: 2021-12-29 09:31:16
  * @Description: file content
  */
 var url = {
@@ -254,7 +254,7 @@ var deepCopy = function (obj) {
  * @Author: crli
  * @Date: 2021-06-01 09:48:53
  * @LastEditors: crli
- * @LastEditTime: 2021-06-01 09:49:28
+ * @LastEditTime: 2021-12-29 09:31:05
  * @Description: file content
  */
 var object = {
@@ -457,7 +457,7 @@ var windowResize = function (downCb, upCb) {
  * @Author: crli
  * @Date: 2021-06-01 09:52:28
  * @LastEditors: crli
- * @LastEditTime: 2021-06-08 15:21:26
+ * @LastEditTime: 2021-12-29 09:40:36
  * @Description: file content
  */
 var bom = {
@@ -665,11 +665,53 @@ var getSex = function (idCardNo) {
     };
 };
 
+var debounce = function (fn, wait) {
+    var time = null;
+    return function () {
+        var _this = this;
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        clearTimeout(time);
+        time = setTimeout(function () {
+            fn.apply(_this, args);
+        }, wait);
+    };
+};
+
+var throttle = function (fn, wait) {
+    // 记录上一次执行的时间戳
+    var previous = 0;
+    var time = null;
+    return function () {
+        var _this = this;
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        // 当前的时间戳，然后减去之前的时间戳，大于设置的时间间隔，就执行函数，否则不执行
+        if (Date.now() - previous > wait) {
+            clearTimeout(time);
+            time = null;
+            // 更新上一次的时间戳为当前时间戳
+            previous = Date.now();
+            fn.apply(this, args);
+        }
+        else if (!time) {
+            time = setTimeout(function () {
+                time = null;
+                fn.apply(_this, args);
+            }, wait);
+        }
+    };
+};
+
 /*
  * @Author: crli
  * @Date: 2021-06-01 11:17:45
  * @LastEditors: crli
- * @LastEditTime: 2021-06-08 15:44:43
+ * @LastEditTime: 2021-12-29 11:27:19
  * @Description: file content
  */
 var functions = {
@@ -678,7 +720,9 @@ var functions = {
     downFile: downFile,
     getOs: osSelect,
     getRandomNum: getRandomNum,
-    getSex: getSex
+    getSex: getSex,
+    debounce: debounce,
+    throttle: throttle
 };
 
 /*
@@ -815,7 +859,7 @@ var isPhoneNum = function (str) {
  * @Author: crli
  * @Date: 2021-06-01 13:23:13
  * @LastEditors: crli
- * @LastEditTime: 2021-06-10 10:10:20
+ * @LastEditTime: 2021-12-29 09:41:44
  * @Description: file content
  */
 var regexp = {
@@ -829,7 +873,7 @@ var regexp = {
  * @Author: crli
  * @Date: 2021-06-01 14:03:16
  * @LastEditors: crli
- * @LastEditTime: 2021-06-08 15:45:28
+ * @LastEditTime: 2021-12-29 09:42:17
  * @Description: file content
  */
 /**
@@ -1044,7 +1088,7 @@ var getTwoArrDay = function (day) {
  * @Author: crli
  * @Date: 2021-06-02 10:52:40
  * @LastEditors: crli
- * @LastEditTime: 2021-06-02 10:53:26
+ * @LastEditTime: 2021-12-29 09:42:35
  * @Description: file content
  */
 var date = {
@@ -1160,7 +1204,7 @@ var formatTime = function (fmt, date) {
  * @Author: crli
  * @Date: 2021-06-02 10:52:40
  * @LastEditors: crli
- * @LastEditTime: 2021-06-02 11:28:47
+ * @LastEditTime: 2021-12-29 09:43:08
  * @Description: file content
  */
 var time = {
@@ -1224,7 +1268,7 @@ var isArrEqual = function (arr1, arr2) {
  * @Author: crli
  * @Date: 2021-06-08 13:49:06
  * @LastEditors: crli
- * @LastEditTime: 2021-06-08 13:49:29
+ * @LastEditTime: 2021-12-29 09:43:30
  * @Description: file content
  */
 var array = {
@@ -1318,7 +1362,7 @@ var removeClass = function (obj, cls) {
  * @Author: crli
  * @Date: 2021-06-01 15:33:59
  * @LastEditors: crli
- * @LastEditTime: 2021-06-01 15:34:44
+ * @LastEditTime: 2021-12-29 09:43:45
  * @Description: file content
  */
 var dom = {
@@ -1331,4 +1375,4 @@ var dom = {
 var index = __assign(__assign(__assign(__assign(__assign(__assign(__assign(__assign(__assign(__assign(__assign({}, cookie), url), object), bom), functions), regexp), storage), date), time), array), dom);
 
 export default index;
-export { array, bom, cookie, date, dom, functions, object, regexp, storage, time, url };
+export { addClass, clearStore, debounce, deepCopy, downFile, formatPassTime, formatTime, formatTimeCountdown, fullscreenToggel, getArrChunk, getBeforeArrDay, getCookie, getMonthArrDay, getMonthDays, osSelect as getOs, getQueryParse, getQueryStringify, getRandomNum, getScrollTop, getSex, getStore, getStyle, getTwoArrDay, getType, getUrlQuery, hasClass, loadStyle as insertCss, isArrEqual, isEmail, isIdCard, isLeapYear as isLeapYeay, isNotPass, isPhoneNum, listenfullscreen, removeClass, removeCookie, removeStore, scrollTo, setCookie, setScrollTop, setStore, throttle, windowResize };

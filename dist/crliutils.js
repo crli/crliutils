@@ -111,7 +111,7 @@
      * @Author: crli
      * @Date: 2021-05-27 15:28:24
      * @LastEditors: crli
-     * @LastEditTime: 2021-05-28 14:07:38
+     * @LastEditTime: 2021-12-29 09:23:26
      * @Description: file content
      */
     var cookie = {
@@ -207,7 +207,7 @@
      * @Author: crli
      * @Date: 2021-05-31 13:58:41
      * @LastEditors: crli
-     * @LastEditTime: 2021-05-31 13:59:04
+     * @LastEditTime: 2021-12-29 09:31:16
      * @Description: file content
      */
     var url = {
@@ -260,7 +260,7 @@
      * @Author: crli
      * @Date: 2021-06-01 09:48:53
      * @LastEditors: crli
-     * @LastEditTime: 2021-06-01 09:49:28
+     * @LastEditTime: 2021-12-29 09:31:05
      * @Description: file content
      */
     var object = {
@@ -463,7 +463,7 @@
      * @Author: crli
      * @Date: 2021-06-01 09:52:28
      * @LastEditors: crli
-     * @LastEditTime: 2021-06-08 15:21:26
+     * @LastEditTime: 2021-12-29 09:40:36
      * @Description: file content
      */
     var bom = {
@@ -671,11 +671,53 @@
         };
     };
 
+    var debounce = function (fn, wait) {
+        var time = null;
+        return function () {
+            var _this = this;
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            clearTimeout(time);
+            time = setTimeout(function () {
+                fn.apply(_this, args);
+            }, wait);
+        };
+    };
+
+    var throttle = function (fn, wait) {
+        // 记录上一次执行的时间戳
+        var previous = 0;
+        var time = null;
+        return function () {
+            var _this = this;
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            // 当前的时间戳，然后减去之前的时间戳，大于设置的时间间隔，就执行函数，否则不执行
+            if (Date.now() - previous > wait) {
+                clearTimeout(time);
+                time = null;
+                // 更新上一次的时间戳为当前时间戳
+                previous = Date.now();
+                fn.apply(this, args);
+            }
+            else if (!time) {
+                time = setTimeout(function () {
+                    time = null;
+                    fn.apply(_this, args);
+                }, wait);
+            }
+        };
+    };
+
     /*
      * @Author: crli
      * @Date: 2021-06-01 11:17:45
      * @LastEditors: crli
-     * @LastEditTime: 2021-06-08 15:44:43
+     * @LastEditTime: 2021-12-29 11:27:19
      * @Description: file content
      */
     var functions = {
@@ -684,7 +726,9 @@
         downFile: downFile,
         getOs: osSelect,
         getRandomNum: getRandomNum,
-        getSex: getSex
+        getSex: getSex,
+        debounce: debounce,
+        throttle: throttle
     };
 
     /*
@@ -821,7 +865,7 @@
      * @Author: crli
      * @Date: 2021-06-01 13:23:13
      * @LastEditors: crli
-     * @LastEditTime: 2021-06-10 10:10:20
+     * @LastEditTime: 2021-12-29 09:41:44
      * @Description: file content
      */
     var regexp = {
@@ -835,7 +879,7 @@
      * @Author: crli
      * @Date: 2021-06-01 14:03:16
      * @LastEditors: crli
-     * @LastEditTime: 2021-06-08 15:45:28
+     * @LastEditTime: 2021-12-29 09:42:17
      * @Description: file content
      */
     /**
@@ -1050,7 +1094,7 @@
      * @Author: crli
      * @Date: 2021-06-02 10:52:40
      * @LastEditors: crli
-     * @LastEditTime: 2021-06-02 10:53:26
+     * @LastEditTime: 2021-12-29 09:42:35
      * @Description: file content
      */
     var date = {
@@ -1166,7 +1210,7 @@
      * @Author: crli
      * @Date: 2021-06-02 10:52:40
      * @LastEditors: crli
-     * @LastEditTime: 2021-06-02 11:28:47
+     * @LastEditTime: 2021-12-29 09:43:08
      * @Description: file content
      */
     var time = {
@@ -1230,7 +1274,7 @@
      * @Author: crli
      * @Date: 2021-06-08 13:49:06
      * @LastEditors: crli
-     * @LastEditTime: 2021-06-08 13:49:29
+     * @LastEditTime: 2021-12-29 09:43:30
      * @Description: file content
      */
     var array = {
@@ -1324,7 +1368,7 @@
      * @Author: crli
      * @Date: 2021-06-01 15:33:59
      * @LastEditors: crli
-     * @LastEditTime: 2021-06-01 15:34:44
+     * @LastEditTime: 2021-12-29 09:43:45
      * @Description: file content
      */
     var dom = {
@@ -1336,18 +1380,50 @@
 
     var index = __assign(__assign(__assign(__assign(__assign(__assign(__assign(__assign(__assign(__assign(__assign({}, cookie), url), object), bom), functions), regexp), storage), date), time), array), dom);
 
-    exports.array = array;
-    exports.bom = bom;
-    exports.cookie = cookie;
-    exports.date = date;
+    exports.addClass = addClass;
+    exports.clearStore = clearStore;
+    exports.debounce = debounce;
+    exports.deepCopy = deepCopy;
     exports.default = index;
-    exports.dom = dom;
-    exports.functions = functions;
-    exports.object = object;
-    exports.regexp = regexp;
-    exports.storage = storage;
-    exports.time = time;
-    exports.url = url;
+    exports.downFile = downFile;
+    exports.formatPassTime = formatPassTime;
+    exports.formatTime = formatTime;
+    exports.formatTimeCountdown = formatTimeCountdown;
+    exports.fullscreenToggel = fullscreenToggel;
+    exports.getArrChunk = getArrChunk;
+    exports.getBeforeArrDay = getBeforeArrDay;
+    exports.getCookie = getCookie;
+    exports.getMonthArrDay = getMonthArrDay;
+    exports.getMonthDays = getMonthDays;
+    exports.getOs = osSelect;
+    exports.getQueryParse = getQueryParse;
+    exports.getQueryStringify = getQueryStringify;
+    exports.getRandomNum = getRandomNum;
+    exports.getScrollTop = getScrollTop;
+    exports.getSex = getSex;
+    exports.getStore = getStore;
+    exports.getStyle = getStyle;
+    exports.getTwoArrDay = getTwoArrDay;
+    exports.getType = getType;
+    exports.getUrlQuery = getUrlQuery;
+    exports.hasClass = hasClass;
+    exports.insertCss = loadStyle;
+    exports.isArrEqual = isArrEqual;
+    exports.isEmail = isEmail;
+    exports.isIdCard = isIdCard;
+    exports.isLeapYeay = isLeapYear;
+    exports.isNotPass = isNotPass;
+    exports.isPhoneNum = isPhoneNum;
+    exports.listenfullscreen = listenfullscreen;
+    exports.removeClass = removeClass;
+    exports.removeCookie = removeCookie;
+    exports.removeStore = removeStore;
+    exports.scrollTo = scrollTo;
+    exports.setCookie = setCookie;
+    exports.setScrollTop = setScrollTop;
+    exports.setStore = setStore;
+    exports.throttle = throttle;
+    exports.windowResize = windowResize;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

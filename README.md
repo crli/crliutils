@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-08 10:08:14
  * @LastEditors: crli
- * @LastEditTime: 2021-06-21 15:54:31
+ * @LastEditTime: 2021-12-29 13:14:15
  * @Description: file content
 -->
  
@@ -22,7 +22,7 @@
   <script src="crliutils.min.js"></script>
   <script>
     console.log(crliutils)
-    console.log(crliutils.cookie)
+    console.log(crliutils.setCookie)
   </script>
 ```
 
@@ -36,7 +36,7 @@ $ npm install -D crliutils
 const crliutils = require('crliutils')
 console.log(crliutils)
 //或者
-import crliutils, {cookie} from 'crliutils'
+import crliutils, {setCookie} from 'crliutils'
 ```
 
 ###  API:
@@ -78,6 +78,8 @@ import crliutils, {cookie} from 'crliutils'
 #### &emsp;&emsp;[getOs][getOs]&emsp;&emsp;获取操作系统类型
 #### &emsp;&emsp;[getRandomNum][getRandomNum]&emsp;&emsp;生成指定范围[min, max]的随机数
 #### &emsp;&emsp;[getSex][getSex]&emsp;&emsp;根据身份证号获取生日，性别
+#### &emsp;&emsp;[debounce][debounce]&emsp;&emsp;防抖
+#### &emsp;&emsp;[throttle][throttle]&emsp;&emsp;节流
 
 ### Object
 #### &emsp;&emsp;[deepCopy][deepCopy]&emsp;&emsp;对象深拷贝
@@ -135,6 +137,8 @@ import crliutils, {cookie} from 'crliutils'
 [getOs]:https://github.com/crli/crliutils/blob/master/src/function/getOs.ts
 [getRandomNum]:https://github.com/crli/crliutils/blob/master/src/function/getRandomNum.ts
 [getSex]:https://github.com/crli/crliutils/blob/master/src/function/getSex.ts
+[debounce]:https://github.com/crli/crliutils/blob/master/src/function/debounce.ts
+[throttle]:https://github.com/crli/crliutils/blob/master/src/function/throttle.ts
 
 [deepCopy]:https://github.com/crli/crliutils/blob/master/src/object/deepCopy.ts
 

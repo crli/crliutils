@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-06-01 14:03:16
  * @LastEditors: crli
- * @LastEditTime: 2021-06-08 15:45:28
+ * @LastEditTime: 2021-12-29 09:42:17
  * @Description: file content
  */
 /**
@@ -49,6 +49,12 @@ const clearStore = (): void => {
 }
 
 export default {
+  setStore,
+  getStore,
+  removeStore,
+  clearStore
+}
+export {
   setStore,
   getStore,
   removeStore,

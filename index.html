@@ -2,7 +2,7 @@
  * @Author: crli
  * @Date: 2021-05-28 10:40:14
  * @LastEditors: crli
- * @LastEditTime: 2021-06-17 15:07:01
+ * @LastEditTime: 2021-12-29 13:10:05
  * @Description: file content
 -->
 <!DOCTYPE html>
@@ -11,17 +11,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="./dist/crliutils.min.js"></script>
+  <!-- <script src="./dist/crliutils.min.js"></script> -->
 </head>
 <body>
   <button id="btn">清除</button>
   <button id="btn1">quan</button>
 </body>
 <script  type="module">
-  import crliutils, {cookie, bom, functions} from './dist/crliutils.esm.min.js'
-  console.log(cookie)
+  import crliutils, {debounce,
+  throttle} from './dist/crliutils.esm.min.js'
+  window.addEventListener('resize', debounce(function() {
+      console.log(11111)
+  }, 200));
+  document.getElementById('btn').addEventListener("click",throttle(function(){
+            console.log(this)
+        }, 2000));
 </script>
-<script>
+<!-- <script>
   console.log(crliutils)
-</script>
+  window.addEventListener('resize', debounce(function() {
+      console.log(11111)
+  }, 200));
+</script> -->
 </html>
